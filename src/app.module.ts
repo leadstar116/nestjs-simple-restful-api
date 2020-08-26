@@ -5,6 +5,7 @@ import { TYPE_ORM_MODULE_OPTIONS } from './config/database';
 import { UserModule } from './app/user/user.module';
 import { RouterModule, Routes } from 'nest-router'
 import { AuthModule } from './app/auth/auth.module';
+import { BalanceModule } from './app/balance/balance.module';
 
 const routes: Routes = [
   {
@@ -18,6 +19,10 @@ const routes: Routes = [
         path: '/users',
         module: UserModule
       },
+      {
+        path: '/balance',
+        module: BalanceModule
+      },
     ]
   }
 ];
@@ -28,7 +33,8 @@ const routes: Routes = [
     ConfigModule.forRoot(),
     TypeOrmModule.forRoot(TYPE_ORM_MODULE_OPTIONS),
     AuthModule,
-    UserModule
+    UserModule,
+    BalanceModule
   ],
   controllers: [],
   providers: [],
