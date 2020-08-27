@@ -13,11 +13,11 @@ export class BalanceService {
     return BalanceService.instance;
   }
 
-  find(id: number): Balance{
+  find(id: string): Balance{
     return this.balanceArray.find(e => e.accountId == id);
   }
 
-  changeAmount(id: number, amount: number, type: number) {
+  changeAmount(id: string, amount: number, type: number) {
     this.balanceArray.map(e => {
       (e.accountId === id)
         ? e.amount = e.amount + type * amount
@@ -25,20 +25,20 @@ export class BalanceService {
     });
   }
 
-  withdraw(id: number, amount: number) {
+  withdraw(id: string, amount: number) {
     this.changeAmount(id, amount, -1);
 
     return { 'origin': this.find(id) };
   }
 
-  transfer(origin: number, destination: number, amount: number) {
+  transfer(origin: string, destination: string, amount: number) {
     this.changeAmount(origin, amount, -1);
     this.deposit(destination, amount);
 
     return { 'origin': this.find(origin), 'destination': this.find(destination) };
   }
 
-  deposit(id: number, amount: number) {
+  deposit(id: string, amount: number) {
     if(this.find(id)) {
       this.changeAmount(id, amount, 1);
     } else {

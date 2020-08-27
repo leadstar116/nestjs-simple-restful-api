@@ -1,4 +1,4 @@
 export interface Balance {
-  accountId: number,
+  accountId: string,
   amount: number,
 }
