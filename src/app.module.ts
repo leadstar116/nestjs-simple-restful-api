@@ -12,14 +12,14 @@ const routes: Routes = [
   {
     path: '/v1',
     children: [
-      {
-        path: '/auth',
-        module: AuthModule
-      },
-      {
-        path: '/users',
-        module: UserModule
-      },
+      // {
+      //   path: '/auth',
+      //   module: AuthModule
+      // },
+      // {
+      //   path: '/users',
+      //   module: UserModule
+      // },
       {
         path: '/balance',
         module: BalanceModule
@@ -36,9 +36,9 @@ const routes: Routes = [
   imports: [
     RouterModule.forRoutes(routes),
     ConfigModule.forRoot(),
-    TypeOrmModule.forRoot(TYPE_ORM_MODULE_OPTIONS),
-    AuthModule,
-    UserModule,
+    // TypeOrmModule.forRoot(TYPE_ORM_MODULE_OPTIONS),
+    // AuthModule,
+    // UserModule,
     BalanceModule,
     EventModule
   ],
