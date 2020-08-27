@@ -14,12 +14,12 @@ export class BalanceService {
   }
 
   find(id: string): Balance{
-    return this.balanceArray.find(e => e.accountId == id);
+    return this.balanceArray.find(e => e.id == id);
   }
 
   changeAmount(id: string, amount: number, type: number) {
     this.balanceArray.map(e => {
-      (e.accountId === id)
+      (e.id === id)
         ? e.amount = e.amount + type * amount
         : e.amount
     });
@@ -43,7 +43,7 @@ export class BalanceService {
       this.changeAmount(id, amount, 1);
     } else {
       this.balanceArray.push({
-        accountId: id,
+        id: id,
         amount
       });
     }
