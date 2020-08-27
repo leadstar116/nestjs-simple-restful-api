@@ -17,7 +17,7 @@ export class EventController {
   @Post()
   @ApiOperation({ description: 'Create, Deposit, Transfer, Withdraw balance' })
   public async depositBalance(@Body() params: EventDto, @Res() res: Response) {
-    const result = this.eventService.create(params)
+    const result = this.eventService.create(params);
     if(result) {
       res.status(HttpStatus.CREATED).json(result);
     } else {
