@@ -17,6 +17,10 @@ export class BalanceService {
     return this.balanceArray.find(e => e.id == id);
   }
 
+  reset() {
+    this.balanceArray = [];
+  }
+
   changeAmount(id: string, amount: number, type: number) {
     this.balanceArray.map(e => {
       (e.id === id)
