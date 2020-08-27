@@ -10,9 +10,7 @@ import { Balance } from './balance.interface';
 @ApiTags('Balance')
 @Controller()
 export class BalanceController {
-  constructor(
-    private readonly balanceService: BalanceService
-  ) {}
+  private balanceService: BalanceService = BalanceService.getInstance()
 
   @Get()
   @ApiOperation({ description: 'Get balance for the account' })
