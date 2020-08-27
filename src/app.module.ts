@@ -10,7 +10,7 @@ import { EventModule } from './app/event/event.module';
 
 const routes: Routes = [
   {
-    path: '/v1',
+    path: '/',
     children: [
       // {
       //   path: '/auth',
