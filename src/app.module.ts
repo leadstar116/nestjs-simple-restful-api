@@ -7,6 +7,7 @@ import { RouterModule, Routes } from 'nest-router'
 import { AuthModule } from './app/auth/auth.module';
 import { BalanceModule } from './app/balance/balance.module';
 import { EventModule } from './app/event/event.module';
+import { ResetModule } from './app/reset/reset.module';
 
 const routes: Routes = [
   {
@@ -28,6 +29,10 @@ const routes: Routes = [
         path: '/event',
         module: EventModule
       },
+      {
+        path: '/reset',
+        module: ResetModule
+      },
     ]
   }
 ];
@@ -40,7 +45,8 @@ const routes: Routes = [
     // AuthModule,
     // UserModule,
     BalanceModule,
-    EventModule
+    EventModule,
+    ResetModule
   ],
   controllers: [],
   providers: [],
