@@ -6,6 +6,7 @@ import { UserModule } from './app/user/user.module';
 import { RouterModule, Routes } from 'nest-router'
 import { AuthModule } from './app/auth/auth.module';
 import { BalanceModule } from './app/balance/balance.module';
+import { EventModule } from './app/event/event.module';
 
 const routes: Routes = [
   {
@@ -23,6 +24,10 @@ const routes: Routes = [
         path: '/balance',
         module: BalanceModule
       },
+      {
+        path: '/event',
+        module: EventModule
+      },
     ]
   }
 ];
@@ -34,7 +39,8 @@ const routes: Routes = [
     TypeOrmModule.forRoot(TYPE_ORM_MODULE_OPTIONS),
     AuthModule,
     UserModule,
-    BalanceModule
+    BalanceModule,
+    EventModule
   ],
   controllers: [],
   providers: [],
