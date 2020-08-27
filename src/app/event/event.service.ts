@@ -4,7 +4,7 @@ import { DepositEvent, Event, EventType, TransferEvent, WithdrawEvent } from './
 
 @Injectable()
 export class EventService {
-  private balanceService: BalanceService = BalanceService.getInstance()
+  private balanceService: BalanceService = BalanceService.getInstance();
 
   create(event: Event) {
     if(event.type == EventType.deposit) {
