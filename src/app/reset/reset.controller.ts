@@ -15,6 +15,6 @@ export class ResetController {
   @ApiOperation({ description: 'Reset state before starting tests' })
   public async reset(@Res() res: Response) {
     this.balanceService.reset();
-    res.status(HttpStatus.OK).json();
+    res.status(HttpStatus.OK).json('OK');
   }
 }
