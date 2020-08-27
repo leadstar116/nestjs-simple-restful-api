@@ -2,20 +2,20 @@ export type Event = WithdrawEvent | DepositEvent | TransferEvent
 
 export interface WithdrawEvent {
   type: EventType.withdraw,
-  origin: number,
+  origin: string,
   amount: number
 }
 
 export interface DepositEvent {
   type: EventType.deposit,
-  destination: number,
+  destination: string,
   amount: number
 }
 
 export interface TransferEvent {
   type: EventType.transfer,
-  origin: number,
-  destination: number,
+  origin: string,
+  destination: string,
   amount: number
 }
 

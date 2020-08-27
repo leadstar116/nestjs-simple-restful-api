@@ -14,7 +14,7 @@ export class BalanceController {
 
   @Get()
   @ApiOperation({ description: 'Get balance for the account' })
-  public async find(@Query('account_id') account_id: number, @Res() res: Response) {
+  public async find(@Query('account_id') account_id: string, @Res() res: Response) {
     const balance: Balance = this.balanceService.find(account_id)
     if(balance) {
       res.status(HttpStatus.OK).json(balance.amount);
